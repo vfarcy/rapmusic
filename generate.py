@@ -23,7 +23,7 @@ def create_rap_piano():
     # Header: format 0, 1 track, 96 ticks per beat.
     header = b"MThd" + struct.pack(">IHHH", 6, 0, 1, 96)
 
-    bpm = 84
+    bpm = 96
     ticks_per_beat = 96
     ticks_per_bar = ticks_per_beat * 4
     ticks_per_step = ticks_per_bar // 16
@@ -33,8 +33,8 @@ def create_rap_piano():
     drum_channel = 9
 
     events = bytearray()
-    # Tempo: 84 BPM.
-    events += b"\x00\xFF\x51\x03\x0B\x49\x10"
+    # Tempo: 96 BPM.
+    events += b"\x00\xFF\x51\x03\x09\x89\x68"
     # Piano and drum mix controls.
     events += b"\x00\xB0\x07\x78" + b"\x00\xB0\x0B\x70"
     events += b"\x00\xB9\x07\x74" + b"\x00\xB9\x0B\x6C"

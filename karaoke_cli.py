@@ -11,7 +11,7 @@ from pathlib import Path
 DEFAULT_LYRICS_FILE = Path("paroles_le_revers_du_fond_de_court.txt")
 DEFAULT_MIDI_FILE = Path("instru_piano_rap.mid")
 DEFAULT_MIDI_FALLBACK = Path("temp/instru_piano_rap_fort.mid")
-DEFAULT_BPM = 84
+DEFAULT_BPM = 96
 DEFAULT_MIDI_LEAD = 0.8
 DEFAULT_RAP_WORDS_PER_BEAT = 2.6
 DEFAULT_SECTION_BEATS = 3.0
