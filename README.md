@@ -19,6 +19,7 @@ Projet Python pour:
   - fin instrumentale conservée (tail-silence)
 - Support UTF-8 Windows pour afficher les accents français (é, è, à, ç, œ)
 - Outil de grille de flow V2 (1-e-&-a) via build_flow_v2.py
+- Vocalisation automatique des paroles (voix guide) via vocalize_song.py
 
 ## Prérequis
 
@@ -29,6 +30,7 @@ Projet Python pour:
 Dépendances Python (requirements.txt):
 - mido==1.3.3
 - music21==10.5.0
+- pyttsx3==2.99
 
 ## Installation
 
@@ -43,7 +45,8 @@ pip install -r requirements.txt
 ## Scripts principaux
 
 - mc_beat.py
-  - Génère le beat principal: mc_solaar_flow_ready.mid
+  - Génère le beat principal Rhodes: mc_solaar_flow_ready.mid
+  - Génère aussi une variante EP2: mc_solaar_flow_ready_ep2.mid
   - Si le fichier est verrouillé, écrit un fallback: mc_solaar_flow_ready_v2.mid
 
 - karaoke_cli.py
@@ -53,6 +56,10 @@ pip install -r requirements.txt
 - build_flow_v2.py
   - Construit une version analysée du flow (grille 1-e-&-a)
   - Sortie: paroles_bilan_thermique_flow_v2_1e_and_a.txt
+
+- vocalize_song.py
+  - Génère une voix guide TTS depuis les paroles (français)
+  - Sortie par défaut: vocal_guide.wav
 
 ## Fichiers de paroles utiles
 
@@ -103,6 +110,18 @@ python karaoke_cli.py paroles_bilan_thermique_flow_accentue.txt --auto --sync-mi
 
 ```powershell
 python build_flow_v2.py
+```
+
+### Vocaliser les paroles (voix guide)
+
+```powershell
+python vocalize_song.py --input paroles_bilan_thermique_flow_accentue_fr.txt --output vocal_guide.wav --rate 160
+```
+
+### Lancer le karaoké avec la version EP2
+
+```powershell
+python karaoke_cli.py paroles_bilan_thermique_flow_accentue.txt --auto --sync-midi --play-midi --midi mc_solaar_flow_ready_ep2.mid --bpm 88 --midi-lead 0.8 --end-sync-mode exact --render-mode scroll
 ```
 
 ## Options de karaoke_cli.py
@@ -183,3 +202,4 @@ chcp 65001
   - mc_beat.py
   - karaoke_cli.py
   - build_flow_v2.py
+  - vocalize_song.py
