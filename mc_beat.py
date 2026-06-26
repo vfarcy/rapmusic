@@ -147,7 +147,9 @@ def add_outro_tail(drums, bass, piano, start_bar, progression):
     add_human_note(bass, root, bar_start, vel=40, jitter=0.01, dur_jitter=0.0)
 
 
-def main():
+def build_score(piano_program=5, piano_name="Rhodes"):
+    rng.seed(SEED)
+
     score = stream.Score()
     score.append(tempo.MetronomeMark(number=BPM))
     score.append(key.Key(TONE_CENTER, MODE))
@@ -159,7 +161,9 @@ def main():
     bass.append(instrument.ElectricBass())
 
     piano = stream.Part()
-    piano.append(instrument.ElectricPiano())
+    piano_inst = instrument.instrumentFromMidiProgram(piano_program)
+    piano_inst.instrumentName = piano_name
+    piano.append(piano_inst)
 
     intro = [
         ["C4", "Eb4", "G4"],
@@ -203,14 +207,25 @@ def main():
     score.insert(0, bass)
     score.insert(0, piano)
 
-    out_file = "mc_solaar_flow_ready.mid"
+    return score
+
+
+def write_with_fallback(score_obj, filename, fallback_stem):
     try:
-        score.write("midi", out_file)
-        print(f"Beat genere: {out_file}")
+        score_obj.write("midi", filename)
+        print(f"Beat genere: {filename}")
     except PermissionError:
-        fallback = Path(out_file).with_stem("mc_solaar_flow_ready_v2")
-        score.write("midi", str(fallback))
+        fallback = Path(filename).with_stem(fallback_stem)
+        score_obj.write("midi", str(fallback))
         print(f"Beat genere (fallback): {fallback}")
+
+
+def main():
+    rhodes_score = build_score(piano_program=5, piano_name="Rhodes")
+    write_with_fallback(rhodes_score, "mc_solaar_flow_ready.mid", "mc_solaar_flow_ready_v2")
+
+    ep2_score = build_score(piano_program=6, piano_name="Electric Piano 2")
+    write_with_fallback(ep2_score, "mc_solaar_flow_ready_ep2.mid", "mc_solaar_flow_ready_ep2_v2")
 
 
 if __name__ == "__main__":
