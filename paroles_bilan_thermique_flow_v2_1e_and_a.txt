@@ -1,0 +1,300 @@
+Titre: Bilan Thermique (Flow V2 - 1e&a)
+Tempo: 88 BPM
+
+Legende:
+- Grille: subdivision 1-e-&-a sur 4 temps
+- Accent map: X = appui vocal, . = passage
+- Les lignes [Mxx] restent les memes pour la pose
+
+Titre : Bilan Thermique (Flow Accentué)
+Tempo : 88 BPM
+
+Légende :
+- MAJUSCULES = accents vocaux
+- tirets = découpe syllabique utile
+- [Mxx] = numéro de mesure (1 ligne ~ 1 mesure)
+- // = respiration courte
+
+[Intro - 4 mesures]
+[M01] QUA-tre-vingt-qua-TORZE, le dé-COR se des-SINE // PACTE en NOIR et BLANC
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . X | . X . X | X . . . | X . . X
+[M02] DIX-SEPT pour ELLE, vingt et UN pour LUI // ils JU-rent pour long-TEMPS
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . X | . X . X | . X . . | . . . X
+[M03] LUI court vers le CHIFFRE et la PRIME // pen-SANT sau-VER le MANQUE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | X . . X | . X . . | X . . X
+[M04] ELLE tient le FOYER à bout de BRAS // mais le SI-lence PREND la PLANQUE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . X | . . . X | . . X . | . X . X
+
+[Couplet 1 - 16 mesures]
+[M05] IL REN-tre TARD avec la PAIE // il PENSE : j’as-SURE la mis-SION
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . X . . | X . . X
+[M06] Mais l’a-MOUR manque d’AIR // quand il n’y a PLUS de trans-mis-SION
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | X . . X | . . . . | X . . X
+[M07] Dans le NID, les FILLES gran-DISSENT // et son ab-SENCE fait la LOI
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . X . X | . . . . | X . . X
+[M08] Spec-ta-TEUR de sa PRO-pre VIE // il n’ha-BITE dé-JÀ plus chez SOI
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . X . X | . . . X | X . . X
+[M09] L’OR du con-TRAT s’ef-FRITE // le dé-COR sonne CREUX
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . . . . | X . . X
+[M10] Il COCHE toutes les CASES // mais il ne VOIT plus ses YEUX
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . . . X | . . . . | X . . X
+[M11] Il veut scel-LER l’u-NION avec des bil-LETS // des PLANS, des ga-ran-TIES
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | X . . X | . X . . | . . . X
+[M12] Mais les CŒURS n’ont pas de FICHE de PAIE // ni CLAUSE de sur-VIE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . X . X | . . X . | . . . X
+[M13] Le con-FORT n’ef-FACE pas l’o-RAGE // JUSTE il le ra-LEN-tit
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | X . . X | X . . . | . . X .
+[M14] Le MANQUE re-VIENT la NUIT // et c’est la NUIT qui a-ver-TIT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . . . . | X . . X
+[M15] Il PARLE ren-de-MENT, sé-cu-ri-TÉ // pro-JET à LONG TERME
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . . X . | . X . X
+[M16] Elle PARLE cha-LEUR, pré-SENCE // et des GESTES qui dé-SARMENT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . . . X | . . . X
+[M17] DEUX langues dans la MÊME mai-SON // DEUX cli-MATS sous un TOIT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | . X . X | X . . X | . . . X
+[M18] Le MUR tient en-CORE de-BOUT // mais le FEU ne ré-POND plus, dé-JÀ
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . X . X | . . X . | X . . X
+[M19] ... lais-ser RES-pi-rer le BEAT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: . . . . | . X . . | . . . . | . . . X
+[M20] ... re-prise sur le 2
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: . . . . | . . . . | . . . . | . . . .
+
+[Refrain - 8 mesures]
+[M21] C’EST le bi-LAN ther-MIQUE d’un a-MOUR en hi-VER
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . X . X | . . . . | X . . X
+[M22] Les CŒURS se lé-ZAR-dent // les MURS se PERDENT dans l’AIR
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . X . | . X . . | X . . X
+[M23] TRENTE-DEUX ans de sur-SIS pour i-so-LER le VIDE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . . X | . . . . | X . . X
+[M24] ELLE marche vers le JOUR // l’ho-ri-ZON de-VIENT lim-PIDE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | . . . X | . . . X | . X . X
+[M25] Le con-TRAT de-VIENT ca-DUC // les sen-ti-MENTS s’ex-ILENT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . X . X | . . . . | X . . X
+[M26] Quand le bé-TON s’ef-FONDRE // RES-te le re-GARD des FILLES
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | X . . X | X . . . | . X . X
+[M27] On vou-LAIT sau-VER la FORME // on a per-DU le SENS
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . X . X | . . . . | X . . X
+[M28] C’EST le bi-LAN d’une VIE // et le PRIX de l’ab-SENCE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . . X . | . . . X
+
+[Couplet 2 - 16 mesures]
+[M29] Puis la ma-CHINE s’en-RAYE // grand COURT-cir-CUIT in-té-RIEUR
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | X . . X | . X . . | X . . X
+[M30] BURN-OUT pro-fes-sion-NEL // le pi-LIER n’a PLUS de mo-TEUR
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . . X | . . X . | X . . X
+[M31] Le pro-TEC-teur chan-CELLE // l’i-MAGE tombe du CADRE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . X | . . . X | . . . X | . . . X
+[M32] Pour ELLE c’est le SÉISME // le ré-EL de-VIENT plus DUR à te-NIR
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . . X | . . X X | . X . X
+[M33] A-LORS elle blin-DE-ra l’a-ve-NIR // DEUX re-FUGES, DEUX pierres
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . X | . . . X | X . . . | X X . .
+[M34] COMME on met un CASQUE au cœur // quand le fu-TUR fait PEUR
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | . X . . | . . . . | X . . X
+[M35] BRIQUES contre la PEINE // as-su-RANCE contre le SORT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | . . . X | . . . X | . . . X
+[M36] Pen-DANT qu’il panse son or-GUEIL // en JOU-ant en-CORE plus FORT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . . X | . X . . | . X . X
+[M37] Mais la LOI change le ter-RAIN // nou-VEAU cli-MAT, nou-VELLES règles
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . . . X | . X . . | X . X .
+[M38] Les NIDS pré-VUS pour plus TARD // de-VIENNENT des PIÈCES fra-GILES
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . X . . | X . . X
+[M39] Il FAUT vendre a-VANT la CASSE // a-VANT le GOUFFRE, a-VANT le BRAS
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . X . X | . X . X | . X . X
+[M40] Mais en ven-DANT ces MURS-là // c’est son CIEL qu’il BRISE, LÀ
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | X . X . | . . . X | . . X X
+[M41] À TA-BLE, les si-LENCES COUPENT // plus tran-CHANTS qu’un ju-ge-MENT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X X . | . . X X | . . X . | . . . X
+[M42] Ils ne se PARLENT plus d’a-MOUR // seu-LE-ment de fi-nan-ce-MENT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . X | . . . X | . X . . | . . . X
+[M43] TOUT est PROPRE sur le pa-PIER // TOUT est MORT dans la VOIX
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . . . X | X . . X | . . . X
+[M44] Il RES-te les FAITS, les CHIFFRES // et ce que per-SONNE ne re-ÇOIT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . X . X | . . . . | X . . X
+
+[Couplet 3 - 16 mesures]
+[M45] ELLE se sent dé-pou-ILLÉE // MISE à NU par l’o-RAGE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | . . . X | X . X . | . . . X
+[M46] Ce n’EST plus une af-FAIRE d’ar-GENT // c’est la FIN du vo-YAGE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . X . X | . . . . | X . . X
+[M47] À cin-QUANTE-CINQ prin-TEMPS // elle veut res-pi-RER de-MAIN
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . X | X . . X | . . . . | . X . X
+[M48] LUI, cin-QUANTE-NEUF, re-GARDE la MER // mais ne VOIT plus le che-MIN
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X X | . X . X | . . X . | . . . X
+[M49] Le ver-DICT tombe à TA-BLE // NET, comme un cou-pe-RET
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . . X X | X . . . | . . . X
+[M50] TRENTE-DEUX ans de ma-RIAGE // en une PHRASE, c’est ter-MINÉ
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . . X | . . X . | . . . X
+[M51] Il EST triste et cou-PABLE // dé-ÇU par la sen-TENCE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . . X | . X . . | . . . X
+[M52] LUI qui croyait leur DEAL grave // en CLAUSES d’é-qui-va-LENCE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | . . X . | . X . . | . . . X
+[M53] Mais les COMPTES d’a-MOUR n’ont PAS de bi-LAN comp-TABLE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . . X . | . X . . | . X . X
+[M54] La rai-SON du plus FORT // n’est PLUS du TOUT ren-TABLE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . X | . . . X | . . X . | . X . X
+[M55] Le ri-DEAU tombe en-FIN // sur ce DRA-ME in-vi-SIBLE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . X | . . . X | . . X . | X . . X
+[M56] ELLE re-PREND sa VIE // lu-CIDE, de-BOUT, in-vin-CIBLE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | X . . X | . X . . | X . . X
+[M57] LUI reste face aux RUI-NES // du RÔLE qu’il a por-TÉ
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | . . X X | . X . . | . . . X
+[M58] Com-PREND trop TARD une CHOSE // ai-MER, c’est Ê-TRE à cô-TÉ
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . X . . | X . . X
+[M59] Pas JUSTE payer la fac-TURE // ni pro-METTRE en grand ANGLE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . . X | . . . X | . . . X
+[M60] Mais te-NIR dans le quo-ti-DIEN // quand le CŒUR de-VIENT fra-GILE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . . . X | . . X . | . X . X
+
+[Refrain final - 8 mesures]
+[M61] C’EST le bi-LAN ther-MIQUE d’un a-MOUR en hi-VER
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . X . X | . . . . | X . . X
+[M62] Les CŒURS se lé-ZAR-dent // les MURS se PERDENT dans l’AIR
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . X . | . X . . | X . . X
+[M63] TRENTE-DEUX ans de sur-SIS pour i-so-LER le VIDE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | . . . X | . . . . | X . . X
+[M64] ELLE marche vers le JOUR // l’ho-ri-ZON de-VIENT lim-PIDE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | . . . X | . . . X | . X . X
+[M65] Le con-TRAT de-VIENT ca-DUC // les sen-ti-MENTS s’ex-ILENT
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . X . X | . . . . | X . . X
+[M66] Quand le bé-TON s’ef-FONDRE // RES-te le re-GARD des FILLES
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . . . | X . . X | X . . . | . X . X
+[M67] On vou-LAIT sau-VER la FORME // on a per-DU le SENS
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X . X . | . X . X | . . . . | X . . X
+[M68] C’EST le bi-LAN d’une VIE // et le PRIX de l’ab-SENCE
+      Grid      : 1 e & a | 2 e & a | 3 e & a | 4 e & a
+      Subdiv    : 1 e & a | 1 e & a | 1 e & a | 1 e & a
+      Accent map: X X . . | X . . X | . . X . | . . . X

@@ -1,4 +1,5 @@
 import argparse
+import ctypes
 import os
 import re
 import struct
@@ -35,6 +36,23 @@ def clear_screen() -> None:
     os.system("cls" if os.name == "nt" else "clear")
 
 
+def ensure_utf8_console() -> None:
+    if os.name == "nt":
+        try:
+            kernel32 = ctypes.windll.kernel32
+            kernel32.SetConsoleOutputCP(65001)
+            kernel32.SetConsoleCP(65001)
+        except (AttributeError, OSError):
+            pass
+
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+        sys.stdin.reconfigure(encoding="utf-8")
+    except (AttributeError, ValueError):
+        pass
+
+
 def load_lyrics(path: Path) -> list[str]:
     if not path.exists():
         raise FileNotFoundError(f"Fichier introuvable: {path}")
@@ -48,7 +66,10 @@ def load_lyrics(path: Path) -> list[str]:
 
 
 def is_section(line: str) -> bool:
-    return line.startswith("##") or line.startswith("###")
+    stripped = line.strip()
+    if stripped.startswith("##") or stripped.startswith("###"):
+        return True
+    return stripped.startswith("[") and stripped.endswith("]")
 
 
 def normalize_section_name(line: str) -> str | None:
@@ -165,6 +186,29 @@ def print_frame(
                 print("> " + render_word_line(line, word_index, use_color))
         else:
             print(render_context_line(line, use_color))
+
+
+def print_scroll_header(title: str, total: int, use_color: bool) -> None:
+    print(colorize(title, "title", use_color))
+    print(colorize("=" * len(title), "dim", use_color))
+    print(colorize(f"{total} lignes", "dim", use_color))
+    print()
+
+
+def print_scroll_line(line: str, index: int, total: int, use_color: bool) -> None:
+    progress = colorize(f"[{index:02d}/{total:02d}]", "dim", use_color)
+    if is_section(line):
+        print(f"{progress} " + colorize(section_label(line), "section", use_color))
+    else:
+        print(f"{progress} " + colorize(line, "active", use_color))
+
+
+def print_scroll_word_progress(line: str, index: int, total: int, word_index: int, use_color: bool) -> None:
+    progress = colorize(f"[{index:02d}/{total:02d}]", "dim", use_color)
+    rendered_line = render_word_line(line, word_index, use_color)
+    # In-place update avoids full-screen clears and reduces flicker.
+    sys.stdout.write("\r\033[2K" + f"{progress} {rendered_line}")
+    sys.stdout.flush()
 
 
 def word_count(line: str) -> int:
@@ -357,6 +401,7 @@ def run_karaoke(
     midi_lead: float,
     end_sync_mode: str,
     tail_silence: float,
+    render_mode: str,
 ) -> None:
     total = len(lines)
     timings = build_timing_profile(lines, bpm) if sync_midi else [delay] * total
@@ -386,7 +431,30 @@ def run_karaoke(
         if auto:
             sleep_to_target(midi_lead)
 
+    if render_mode == "scroll":
+        print_scroll_header(title, total, use_color)
+
     for index, line in enumerate(lines, start=1):
+        if render_mode == "scroll":
+            if auto and not is_section(line):
+                words = [token for token in tokenize_line(line) if not token.isspace()]
+                per_word = max(0.08, timings[index - 1] / max(1, len(words)))
+                for word_index in range(len(words)):
+                    print_scroll_word_progress(line, index, total, word_index, use_color)
+                    sleep_to_target(per_word)
+                print()
+                continue
+
+            print_scroll_line(line, index, total, use_color)
+            if auto:
+                sleep_to_target(timings[index - 1])
+                continue
+            try:
+                input("Entree pour la ligne suivante...")
+            except KeyboardInterrupt:
+                break
+            continue
+
         if auto and not is_section(line):
             words = [token for token in tokenize_line(line) if not token.isspace()]
             per_word = max(0.08, timings[index - 1] / max(1, len(words)))
@@ -433,7 +501,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--title",
-        default="Karaoké - Le Revers du Fond de Court",
+           default="Karaoke - Bilan Thermique",
         help="Titre affiché en haut de l'écran.",
     )
     parser.add_argument(
@@ -488,10 +556,18 @@ def build_parser() -> argparse.ArgumentParser:
         default=1.5,
         help="Silence final (secondes) conservé en mode 'tail-silence' (défaut: 1.5).",
     )
+    parser.add_argument(
+        "--render-mode",
+        choices=("scroll", "frame"),
+        default="scroll",
+        help="Mode d'affichage: 'scroll' (sans scintillement) ou 'frame' (mot a mot).",
+    )
     return parser
 
 
 def main() -> int:
+    ensure_utf8_console()
+
     parser = build_parser()
     args = parser.parse_args()
 
@@ -520,6 +596,7 @@ def main() -> int:
         midi_lead=args.midi_lead,
         end_sync_mode=args.end_sync_mode,
         tail_silence=args.tail_silence,
+        render_mode=args.render_mode,
     )
     return 0
 

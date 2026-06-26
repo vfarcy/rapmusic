@@ -1,193 +1,185 @@
 # RapMusic Karaoke CLI
 
-Application Python pour generer une instru MIDI rap/slam et afficher des paroles en mode karaoke dans le terminal.
+Projet Python pour:
+- generer un beat MIDI boom-bap flow-ready
+- afficher des paroles en karaoke terminal (mot a mot)
+- synchroniser la duree du texte avec la musique MIDI
+
+Etat: documentation mise a jour pour les scripts actuels.
+
+## Fonctionnalites
+
+- Generation d un beat principal via mc_beat.py
+- Karaoke CLI avec:
+  - mode scroll (sans scintillement)
+  - mode frame (fenetre glissante)
+  - surbrillance mot a mot
+- Synchronisation texte/midi:
+  - fin exacte (exact)
+  - fin instrumentale conservee (tail-silence)
+- Support UTF-8 Windows pour afficher accents francais (e, e, a, c, oe)
+- Outil de grille de flow V2 (1-e-&-a) via build_flow_v2.py
+
+## Prerequis
+
+- Python 3.10+
+- Windows, macOS ou Linux
+- Un lecteur associe aux fichiers .mid
+
+Dependances Python (requirements.txt):
+- mido==1.3.3
+- music21==10.5.0
+
+## Installation
+
+### Option recommande (venv)
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+## Scripts principaux
+
+- mc_beat.py
+  - Genere le beat principal: mc_solaar_flow_ready.mid
+  - Si le fichier est verrouille, ecrit un fallback: mc_solaar_flow_ready_v2.mid
+
+- karaoke_cli.py
+  - Lance le karaoke depuis un fichier de paroles
+  - Peut ouvrir et caler un MIDI en parallele
+
+- build_flow_v2.py
+  - Construit une version analysee du flow (grille 1-e-&-a)
+  - Sortie: paroles_bilan_thermique_flow_v2_1e_and_a.txt
+
+## Fichiers de paroles utiles
+
+- paroles_bilan_thermique_flow_accentue.txt
+  - Version operationnelle pour karaoke (accents de flow)
+
+- paroles_bilan_thermique_flow_accentue_fr.txt
+  - Variante accentuee en francais UTF-8
+
+- paroles_bilan_thermique_flow_v2_1e_and_a.txt
+  - Version grille de subdivision (generee)
 
 ## Quick Start
 
-1) Generer le MIDI :
+### 1) Generer le beat
 
 ```powershell
-python3.13.exe generate.py
+python mc_beat.py
 ```
 
-2) Lancer le karaoke avec fin exacte (texte et musique ensemble) :
+### 2) Lancer le karaoke complet (recommande)
 
 ```powershell
-python3.13.exe karaoke_cli.py --auto --sync-midi --play-midi --midi instru_piano_rap.mid --midi-lead 0.8 --end-sync-mode exact
+python karaoke_cli.py paroles_bilan_thermique_flow_accentue.txt --auto --sync-midi --play-midi --midi mc_solaar_flow_ready.mid --bpm 88 --midi-lead 0.8 --end-sync-mode exact --render-mode scroll
 ```
 
-3) Lancer le karaoke avec 1.5s de queue instrumentale :
+## Commandes utiles
+
+### Karaoke avec fin instrumentale (queue)
 
 ```powershell
-python3.13.exe karaoke_cli.py --auto --sync-midi --play-midi --midi instru_piano_rap.mid --midi-lead 0.8 --end-sync-mode tail-silence --tail-silence 1.5
+python karaoke_cli.py paroles_bilan_thermique_flow_accentue.txt --auto --sync-midi --play-midi --midi mc_solaar_flow_ready.mid --bpm 88 --midi-lead 0.8 --end-sync-mode tail-silence --tail-silence 1.5 --render-mode scroll
 ```
 
-Le projet contient deux scripts principaux :
-- generate.py : genere l accompagnement MIDI
-- karaoke_cli.py : affiche les paroles avec un defilement manuel ou automatique
-
-## 1) Prerequis
-
-- Windows (ou autre OS compatible Python)
-- Python 3.13 (ou version recente)
-- Un lecteur/app associee aux fichiers .mid
-
-Option recommandee (si presente dans le projet) :
-- environnement virtuel local .venv
-
-## 2) Structure utile
-
-- paroles_le_revers_du_fond_de_court.txt : paroles par defaut
-- instru_piano_rap.mid : MIDI principal genere
-- temp/instru_piano_rap_fort.mid : fallback si le fichier principal est verrouille
-- generate.py : generation de l instru
-- karaoke_cli.py : lecteur karaoke terminal
-
-## 3) Generer le MIDI
-
-Commande simple :
+### Karaoke sans musique (texte seul)
 
 ```powershell
-python3.13.exe generate.py
+python karaoke_cli.py paroles_bilan_thermique_flow_accentue.txt --auto --sync-midi --bpm 88 --render-mode scroll
 ```
 
-Resultat attendu :
-- generation de instru_piano_rap.mid
-- si verrouillage du fichier cible, generation d une copie dans temp/instru_piano_rap_fort.mid
-
-## 4) Lancer le karaoke
-
-Exemple complet (auto + synchro MIDI + lecture MIDI) :
+### Mode frame (alternative)
 
 ```powershell
-python3.13.exe karaoke_cli.py --auto --sync-midi --play-midi --midi instru_piano_rap.mid --midi-lead 0.8
+python karaoke_cli.py paroles_bilan_thermique_flow_accentue.txt --auto --sync-midi --play-midi --midi mc_solaar_flow_ready.mid --bpm 88 --midi-lead 0.8 --end-sync-mode exact --render-mode frame
 ```
 
-Exemple sans lecture MIDI (texte seul) :
+### Generer la grille de flow V2
 
 ```powershell
-python3.13.exe karaoke_cli.py --auto --sync-midi
+python build_flow_v2.py
 ```
 
-Exemple en mode manuel (Entree pour avancer) :
-
-```powershell
-python3.13.exe karaoke_cli.py
-```
-
-## 5) Synchronisation texte/musique
-
-Le script peut maintenant caler la fin du texte sur la fin du MIDI.
-
-Deux modes :
-- exact : texte et musique finissent en meme temps
-- tail-silence : la musique continue un peu apres la derniere ligne
-
-Options :
-- --end-sync-mode exact|tail-silence
-- --tail-silence <secondes> (defaut 1.5)
-
-Exemples :
-
-1. Fin exacte :
-
-```powershell
-python3.13.exe karaoke_cli.py --auto --sync-midi --play-midi --midi instru_piano_rap.mid --midi-lead 0.8 --end-sync-mode exact
-```
-
-2. Garder 1.5s de queue instrumentale :
-
-```powershell
-python3.13.exe karaoke_cli.py --auto --sync-midi --play-midi --midi instru_piano_rap.mid --midi-lead 0.8 --end-sync-mode tail-silence --tail-silence 1.5
-```
-
-## 6) Toutes les options CLI de karaoke_cli.py
+## Options karaoke_cli.py
 
 - lyrics_file
   - chemin du fichier de paroles (optionnel)
-
 - --auto
   - defilement automatique
-
 - --delay <float>
-  - delai entre lignes en mode auto sans synchro MIDI
-
+  - delai fixe entre lignes (si --sync-midi absent)
 - --title <texte>
-  - titre affiche en haut
-
+  - titre affiche
 - --color / --no-color
-  - active/desactive les couleurs ANSI
-
+  - active/desactive ANSI
 - --sync-midi
-  - construit un profil temporel rap/slam pour les lignes
-
+  - construit un profil de timing rap/slam
 - --bpm <float>
-  - BPM de reference pour le profil de timing
-
+  - BPM de reference du profil de timing
 - --midi <chemin>
-  - fichier MIDI a ouvrir en fond
-
+  - fichier MIDI cible
 - --play-midi
-  - lance le MIDI pendant le karaoke
-
+  - ouvre le MIDI en arriere-plan
 - --midi-lead <float>
-  - attente apres lancement du MIDI avant debut texte
-
+  - delai avant debut texte apres lancement MIDI
 - --end-sync-mode exact|tail-silence
   - mode de calage de fin
-
 - --tail-silence <float>
-  - duree de queue instrumentale souhaitee en mode tail-silence
+  - duree conservee de queue instrumentale
+- --render-mode scroll|frame
+  - scroll (sans scintillement) ou frame (fenetre)
 
-## 7) Format recommande pour les paroles
+## Format des paroles
 
-- Les lignes non vides sont affichees
-- Les sections commencent par ## ou ###
-- Les marqueurs comme [Intro], [Couplet], [Refrain] sont supportes
-- Le marqueur / dans les lignes peut servir de repere de flow
+- Lignes non vides: affichees
+- Sections reconnues:
+  - lignes commencant par ## ou ###
+  - lignes entre crochets: [Intro], [Couplet], [Refrain]
+- Marqueurs de respiration possibles dans le texte: //
 
-## 8) Comment le MIDI est resolu
+## Depannage
 
-Quand un fichier MIDI est demande, le script peut choisir entre :
-- le fichier passe via --midi
-- le fallback temp/instru_piano_rap_fort.mid
+### Le script karaoke se termine avec code 1
 
-S il trouve plusieurs candidats existants, il prend le plus recent.
+Ca arrive souvent quand:
+- le fichier de paroles passe en argument n existe pas
+- le chemin MIDI est incorrect
 
-## 9) Depannage
-
-1. Rien ne se joue cote musique
-- verifier qu un lecteur MIDI est associe aux fichiers .mid
-- tester l ouverture manuelle du fichier MIDI
-
-2. Le texte va trop vite ou trop lentement
-- utiliser --sync-midi avec --play-midi
-- ajuster --midi-lead
-- choisir le mode de fin adapte avec --end-sync-mode
-
-3. Le MIDI principal est verrouille
-- relancer generate.py
-- utiliser le fichier de fallback dans temp/
-
-4. Les couleurs ne s affichent pas correctement
-- utiliser --no-color
-
-## 10) Workflow conseille
-
-1. Regenerer la prod
+Verifier d abord:
 
 ```powershell
-python3.13.exe generate.py
+Test-Path .\paroles_bilan_thermique_flow_accentue.txt
+Test-Path .\mc_solaar_flow_ready.mid
 ```
 
-2. Lancer le karaoke cale sur la musique
+### Le MIDI ne se lance pas
+
+- Associer une application de lecture aux fichiers .mid
+- Ouvrir manuellement le fichier .mid pour verifier
+
+### Le texte est mal cale
+
+- Ajuster --midi-lead (ex: 0.6, 0.8, 1.0)
+- Ajuster --bpm
+- Choisir exact ou tail-silence selon le rendu voulu
+
+### Le terminal affiche mal les accents
+
+Le script force UTF-8 au demarrage, mais si besoin:
 
 ```powershell
-python3.13.exe karaoke_cli.py --auto --sync-midi --play-midi --midi instru_piano_rap.mid --midi-lead 0.8 --end-sync-mode exact
+chcp 65001
 ```
 
-3. Variante avec fin instrumentale
+## Notes
 
-```powershell
-python3.13.exe karaoke_cli.py --auto --sync-midi --play-midi --midi instru_piano_rap.mid --midi-lead 0.8 --end-sync-mode tail-silence --tail-silence 1.5
-```
+- Certains fichiers historiques (ex: generate.py, anciens .mid) peuvent rester dans le repo.
+- Le workflow recommande et maintenu est base sur:
+  - mc_beat.py
+  - karaoke_cli.py
+  - build_flow_v2.py
