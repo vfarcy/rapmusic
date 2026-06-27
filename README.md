@@ -10,8 +10,8 @@ Projet Python pour:
 
 ## Fonctionnalités
 
-- Génération d un beat principal via mc_beat.py
-- Karaoke CLI avec:
+- Génération d'un beat principal via mc_beat.py
+- Karaoké CLI avec:
   - mode scroll (sans scintillement)
   - mode frame (fenêtre glissante)
   - surbrillance mot à mot
@@ -90,16 +90,16 @@ python karaoke_cli.py paroles_bilan_thermique_flow_accentue.txt --auto --sync-mi
 
 ## Comment la synchro MIDI / surbrillance fonctionne
 
-La synchronisation n est pas pilotée par des événements temps réel envoyés par le lecteur MIDI. Le script calcule lui-même une timeline, lance le fichier `.mid`, attend `--midi-lead`, puis fait avancer la surbrillance du texte avec sa propre horloge interne.
+La synchronisation n'est pas pilotée par des événements temps réel envoyés par le lecteur MIDI. Le script calcule lui-même une timeline, lance le fichier `.mid`, attend `--midi-lead`, puis fait avancer la surbrillance du texte avec sa propre horloge interne.
 
 ### 1) Construction du timing de base du texte
 
-Quand `--sync-midi` est activé, `karaoke_cli.py` n utilise plus un délai fixe par ligne. Il construit un profil de durée pour chaque ligne à partir de:
+Quand `--sync-midi` est activé, `karaoke_cli.py` n'utilise plus un délai fixe par ligne. Il construit un profil de durée pour chaque ligne à partir de:
 
 - du `--bpm`
 - du nombre de mots dans la ligne
 - de la ponctuation (virgules, points, etc.)
-- d une petite pause de respiration en fin de ligne
+- d'une petite pause de respiration en fin de ligne
 - d un traitement spécial pour les titres / sections (`[Couplet]`, `## Intro`, etc.)
 
 Concrètement:
@@ -127,7 +127,7 @@ Résultat: le script connaît la durée théorique totale du morceau en secondes
 
 ### 3) Recalage global texte -> durée du morceau
 
-Une fois la durée du texte estimée et la durée du MIDI connues, le script applique un coefficient d échelle à toutes les lignes.
+Une fois la durée du texte estimée et la durée du MIDI connues, le script applique un coefficient d'échelle à toutes les lignes.
 
 Principe:
 
@@ -138,7 +138,7 @@ Principe:
 Le temps disponible dépend de trois paramètres:
 
 - durée totale du MIDI
-- `--midi-lead`: attente avant d afficher le premier mot après le lancement du MIDI
+- `--midi-lead`: attente avant d'afficher le premier mot après le lancement du MIDI
 - `--end-sync-mode`
 
 En mode `exact`:
@@ -159,11 +159,11 @@ ratio = temps_texte_disponible / somme_des_durées_estimées
 durée_finale_ligne = durée_estimée_ligne * ratio
 ```
 
-Important: comme un seul ratio global est appliqué, le script conserve les proportions entre les lignes. Si un vers était estimé comme deux fois plus long qu un autre, il reste deux fois plus long après recalage.
+Important: comme un seul ratio global est appliqué, le script conserve les proportions entre les lignes. Si un vers était estimé comme deux fois plus long qu'un autre, il reste deux fois plus long après recalage.
 
 ### 4) Point de départ réel de la synchronisation
 
-À l exécution, l ordre est le suivant:
+À l'exécution, l'ordre est le suivant:
 
 1. le script construit la timeline
 2. il démarre sa propre horloge interne
@@ -174,14 +174,14 @@ Important: comme un seul ratio global est appliqué, le script conserve les prop
 Cela signifie que `--midi-lead` compense:
 
 - le léger délai d ouverture du lecteur MIDI
-- l éventuelle intro instrumentale avant l entrée du texte
+- l'éventuelle intro instrumentale avant l'entrée du texte
 - le ressenti humain de calage que vous voulez obtenir
 
-Si le texte démarre trop tôt, augmentez `--midi-lead`. S il démarre trop tard, diminuez cette valeur.
+Si le texte démarre trop tôt, augmentez `--midi-lead`. S'il démarre trop tard, diminuez cette valeur.
 
 ### 5) Comment la surbrillance mot à mot est produite
 
-La surbrillance visible n est pas stockée dans le fichier de paroles. Elle est calculée au moment de l affichage.
+La surbrillance visible n'est pas stockée dans le fichier de paroles. Elle est calculée au moment de l'affichage.
 
 Pour une ligne normale:
 
@@ -192,7 +192,7 @@ Pour une ligne normale:
 - le mot courant devient "active"
 - les mots suivants restent en style normal
 
-Autrement dit, la synchro MIDI agit d abord au niveau de la ligne, puis cette durée est répartie uniformément mot par mot.
+Autrement dit, la synchro MIDI agit d'abord au niveau de la ligne, puis cette durée est répartie uniformément mot par mot.
 
 Exemple simplifié:
 
@@ -202,16 +202,16 @@ Durée finale de ligne: 2.4 s
 6 mots -> environ 0.4 s par mot
 ```
 
-Le curseur de surbrillance avance donc par pas réguliers à l intérieur de la ligne.
+Le curseur de surbrillance avance donc par pas réguliers à l'intérieur de la ligne.
 
 ### 6) Différence entre sync de ligne et sync de mot
 
 Le point important est le suivant:
 
 - le MIDI recale la durée totale et la durée de chaque ligne
-- la surbrillance mot à mot à l intérieur d une ligne reste uniforme
+- la surbrillance mot à mot à l'intérieur d'une ligne reste uniforme
 
-Il n y a donc pas encore de placement syllabique ou mot par mot issu du MIDI lui-même. Le script ne lit pas les notes pour associer chaque mot à un événement musical précis. Il utilise un modèle simple mais robuste:
+Il n'y a donc pas encore de placement syllabique ou mot par mot issu du MIDI lui-même. Le script ne lit pas les notes pour associer chaque mot à un événement musical précis. Il utilise un modèle simple mais robuste:
 
 - estimation musicale globale
 - recalage sur la durée réelle du morceau
@@ -219,21 +219,21 @@ Il n y a donc pas encore de placement syllabique ou mot par mot issu du MIDI lui
 
 ### 7) Cas où le MIDI ne recale pas vraiment le texte
 
-Le recalage exact sur la durée du MIDI n a lieu que si ces conditions sont réunies:
+Le recalage exact sur la durée du MIDI n'a lieu que si ces conditions sont réunies:
 
 - `--auto`
 - `--sync-midi`
 - `--play-midi`
 - un fichier `--midi` lisible
 
-Si `--sync-midi` est utilisé sans `--play-midi`, le script construit bien un flow basé sur le BPM, mais il ne recale pas les durées sur la longueur réelle d un fichier MIDI.
+Si `--sync-midi` est utilisé sans `--play-midi`, le script construit bien un flow basé sur le BPM, mais il ne recale pas les durées sur la longueur réelle d'un fichier MIDI.
 
 ### 8) Limites actuelles du système
 
 - Le lecteur MIDI est externe, donc Python ne reçoit pas sa position réelle en lecture.
-- Si le lecteur met du temps à s ouvrir, il faut compenser avec `--midi-lead`.
+- Si le lecteur met du temps à s'ouvrir, il faut compenser avec `--midi-lead`.
 - La surbrillance intra-ligne est uniforme par mot, pas alignée sur chaque note.
-- Si le MIDI contient une structure très libre ou des tempos inhabituels, la durée globale sera correcte, mais l accent local peut demander un ajustement manuel des paroles ou du `--midi-lead`.
+- Si le MIDI contient une structure très libre ou des tempos inhabituels, la durée globale sera correcte, mais l'accent local peut demander un ajustement manuel des paroles ou du `--midi-lead`.
 
 ### 9) Réglage pratique recommandé
 
@@ -241,7 +241,7 @@ Pour caler proprement le texte:
 
 1. Garder `--sync-midi` activé.
 2. Utiliser le vrai fichier `--midi` qui sera joué.
-3. Ajuster d abord `--midi-lead`.
+3. Ajuster d'abord `--midi-lead`.
 4. Choisir `exact` si vous voulez que le dernier mot tombe avec la fin du morceau.
 5. Choisir `tail-silence` si vous voulez laisser respirer l instrumental à la fin.
 
@@ -332,10 +332,10 @@ python karaoke_cli.py paroles_bilan_thermique_flow_accentue.txt --auto --sync-mi
 
 Cela arrive souvent quand:
 
-- le fichier de paroles passé en argument n existe pas
+- le fichier de paroles passé en argument n'existe pas
 - le chemin MIDI est incorrect
 
-Vérifiez d abord:
+Vérifiez d'abord:
 
 ```powershell
 Test-Path .\paroles_bilan_thermique_flow_accentue.txt
@@ -349,7 +349,7 @@ Test-Path .\mc_solaar_flow_ready.mid
 
 ### Le texte est mal calé
 
-- Ajuster --midi-lead (ex: 0.6, 0.8, 1.0)
+- Ajuster `--midi-lead` (ex: 0.6, 0.8, 1.0)
 - Ajuster --bpm
 - Choisir exact ou tail-silence selon le rendu voulu
 

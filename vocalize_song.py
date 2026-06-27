@@ -123,7 +123,7 @@ def main() -> int:
 
     text = build_spoken_text(input_path, keep_measure_tags=args.keep_measure_tags)
     if not text:
-        print("Aucune ligne vocalisable trouvee dans le fichier.")
+        print("Aucune ligne vocalisable trouvée dans le fichier.")
         return 1
 
     output_path = Path(args.output)

@@ -450,7 +450,7 @@ def run_karaoke(
                 sleep_to_target(timings[index - 1])
                 continue
             try:
-                input("Entree pour la ligne suivante...")
+                input("Entrée pour la ligne suivante...")
             except KeyboardInterrupt:
                 break
             continue
@@ -501,7 +501,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--title",
-           default="Karaoke - Bilan Thermique",
+           default="Karaoké - Bilan Thermique",
         help="Titre affiché en haut de l'écran.",
     )
     parser.add_argument(
@@ -560,7 +560,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--render-mode",
         choices=("scroll", "frame"),
         default="scroll",
-        help="Mode d'affichage: 'scroll' (sans scintillement) ou 'frame' (mot a mot).",
+        help="Mode d'affichage: 'scroll' (sans scintillement) ou 'frame' (mot à mot).",
     )
     return parser
 
